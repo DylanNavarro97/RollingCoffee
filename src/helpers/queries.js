@@ -1,7 +1,5 @@
 const URL_Productos = import.meta.env.VITE_API_PRODUCTO;
 
-console.log(URL_Productos);
-
 // GET
 export const leerProductosAPI = async () => {
   try {
