@@ -14,7 +14,7 @@ export const leerProductosAPI = async () => {
 };
 
 // POST
-export const crearProductoAPI = async(productoNuevo) => {
+export const crearProductoAPI = async (productoNuevo) => {
   try {
     const respuesta = await fetch(URL_Productos,{
       method: "POST",

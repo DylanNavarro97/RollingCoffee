@@ -7,12 +7,27 @@ const FormularioProducto = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset
   } = useForm();
 
-  const productoValidado = (producto) => {
+  const productoValidado = async (producto) => {
     console.log(producto);
 
-    crearProductoAPI(producto)
+    const respuesta = await crearProductoAPI(producto)
+    if (respuesta.status === 201){
+      swal.fire({
+        title: "Producto creado",
+        text: `El producto "${producto.nombreProducto}" fue creado correctamente`,
+        icon: "success"
+      })
+      reset()
+    } else {
+      swal.fire({
+        title: "Producto creado",
+        text: `El producto "${producto.nombreProducto}" no pudo ser creado. Intente esta operación en unos minutos`,
+        icon: "error"
+      })
+    }
   };
 
   return (
