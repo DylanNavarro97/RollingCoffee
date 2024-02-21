@@ -1,22 +1,31 @@
 {
-    "productos":[
-        {
-            "id":"1",
-            "nombreProducto":"café",
-            "precio": 1500,
-            "categoria":"Infusiones",
-            "descripcionBreve": "café rico",
-            "descripcionAmplia": "café rico con mas detalles",
-            "imagen":"https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        },
-        {
-            "id":"2",
-            "nombreProducto":"té",
-            "precio": 1000,
-            "categoria":"Infusiones",
-            "descripcionBreve": "té rico",
-            "descripcionAmplia": "té rico con mas detalles",
-            "imagen":"url"
-        }
-    ]
+  "productos": [
+    {
+      "id": "1",
+      "nombreProducto": "café",
+      "precio": 1500,
+      "categoria": "Infusiones",
+      "descripcionBreve": "café rico",
+      "descripcionAmplia": "café rico con mas detalles",
+      "imagen": "https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+      "id": "2",
+      "nombreProducto": "té",
+      "precio": 1000,
+      "categoria": "Infusiones",
+      "descripcionBreve": "té rico",
+      "descripcionAmplia": "té rico con mas detalles",
+      "imagen": "url"
+    },
+    {
+      "id": "862d",
+      "nombreProducto": "Cafe cortado",
+      "precioProducto": "5",
+      "imagen": "https://www.cesurformacion.com/uploads/media/21-9-large/02/2302-que-es-la-imagen-personal.png",
+      "categoria": "Infusiones",
+      "descripcionBreve": "Cafe rico",
+      "descripcionAmplia": "asdasdkashgdaksh djahsndjkanshdjkhasjdhajksdhkj ashdjkadjkahsdk"
+    }
+  ]
 }
