@@ -1,8 +1,8 @@
 import { Form, Button } from "react-bootstrap";
-import { useForm } from "react-hook-form";
-import { crearProductoAPI, obtenerProductoAPI } from "../../../helpers/queries";
+import { set, useForm } from "react-hook-form";
+import { crearProductoAPI, editarProductoAPI, obtenerProductoAPI } from "../../../helpers/queries";
 import Swal from "sweetalert2";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
 
 const FormularioProducto = ({ editar }) => {
@@ -11,16 +11,23 @@ const FormularioProducto = ({ editar }) => {
     handleSubmit,
     formState: { errors },
     reset,
+    setValue
   } = useForm();
 
   const { id } = useParams();
+  const navegacion = useNavigate();
 
   const cargarDatosProducto = async () => {
     try{
       const respuesta = await obtenerProductoAPI(id)
       if (respuesta.status === 200){
         const productoEncontrado = await respuesta.json();
-        console.log(productoEncontrado)
+        setValue('nombreProducto', productoEncontrado.nombreProducto)
+        setValue('precioProducto', productoEncontrado.precioProducto)
+        setValue('categoria', productoEncontrado.categoria)
+        setValue('imagen', productoEncontrado.imagen)
+        setValue('descripcionBreve', productoEncontrado.descripcionBreve)
+        setValue('descripcionAmplia', productoEncontrado.descripcionAmplia)
       }
     } catch(error){
       console.log(error)
@@ -39,6 +46,22 @@ const FormularioProducto = ({ editar }) => {
     if (editar === true) {
       // agregar la logica de editar
       console.log("Aqui tengo que editar");
+      // tomar los datos del producto validado y enviarlo a la api para actualizar
+      const respuesta = await editarProductoAPI(producto, id)
+      if (respuesta.status === 200){
+        Swal.fire({
+          title: "Producto modificado",
+          text: `El producto "${producto.nombreProducto}" fue modificado correctamente`,
+          icon: "success",
+        });
+        navegacion('/administrador')
+      } else {
+        Swal.fire({
+          title: "Producto no pudo ser modificado",
+          text: `El producto "${producto.nombreProducto}" no pudo ser modificado. Intente esta operación en unos minutos`,
+          icon: "error",
+        });
+      }
     } else {
       const respuesta = await crearProductoAPI(producto);
       if (respuesta.status === 201) {
@@ -50,7 +73,7 @@ const FormularioProducto = ({ editar }) => {
         reset();
       } else {
         Swal.fire({
-          title: "Producto creado",
+          title: "Producto no pudo ser creado",
           text: `El producto "${producto.nombreProducto}" no pudo ser creado. Intente esta operación en unos minutos`,
           icon: "error",
         });

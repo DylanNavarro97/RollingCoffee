@@ -1,22 +1,22 @@
 {
   "productos": [
     {
-      "id": "1",
       "nombreProducto": "café",
-      "precio": 1500,
+      "precioProducto": "800",
+      "imagen": "https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "categoria": "Infusiones",
       "descripcionBreve": "café rico",
       "descripcionAmplia": "café rico con mas detalles",
-      "imagen": "https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      "id": "1"
     },
     {
-      "id": "37b7",
-      "nombreProducto": "CAFEFE",
+      "nombreProducto": "Té verde orgánico ",
       "precioProducto": "2",
-      "imagen": "https://www.cesurformacion.com/uploads/media/21-9-large/02/2302-que-es-la-imagen-personal.png",
+      "imagen": "https://images.pexels.com/photos/3090274/pexels-photo-3090274.jpeg?auto=compress&cs=tinysrgb&w=300",
       "categoria": "Infusiones",
       "descripcionBreve": "asddas asd asda sd",
-      "descripcionAmplia": "as dasd asd asd asdasd asd asdasdasd asd as asd asd asd asd "
+      "descripcionAmplia": "Mas información sobre el té",
+      "id": "37b7"
     },
     {
       "id": "2ac0",

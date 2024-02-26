@@ -42,7 +42,7 @@ const ItemProducto = ({producto, setProductos}) => {
     <tr>
       <td className="text-center">{producto.id}</td>
       <td>{producto.nombreProducto}</td>
-      <td className="text-end">${producto.precio}</td>
+      <td className="text-end">${producto.precioProducto}</td>
       <td className="text-center td-img">
         <img
           src={producto.imagen}
