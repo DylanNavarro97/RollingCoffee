@@ -10,24 +10,6 @@
       "imagen": "https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
-      "id": "2",
-      "nombreProducto": "té",
-      "precio": 1000,
-      "categoria": "Infusiones",
-      "descripcionBreve": "té rico",
-      "descripcionAmplia": "té rico con mas detalles",
-      "imagen": "url"
-    },
-    {
-      "id": "69b4",
-      "nombreProducto": "CAFEFE",
-      "precioProducto": "12",
-      "imagen": "https://www.cesurformacion.com/uploads/media/21-9-large/02/2302-que-es-la-imagen-personal.png",
-      "categoria": "Infusiones",
-      "descripcionBreve": "sadsdasd asjkd jasdj as",
-      "descripcionAmplia": "djasjdasjdasjdjasdjjasjdajsdj asjd asjd ajsd jasjd asj d"
-    },
-    {
       "id": "37b7",
       "nombreProducto": "CAFEFE",
       "precioProducto": "2",
@@ -35,6 +17,24 @@
       "categoria": "Infusiones",
       "descripcionBreve": "asddas asd asda sd",
       "descripcionAmplia": "as dasd asd asd asdasd asd asdasdasd asd as asd asd asd asd "
+    },
+    {
+      "id": "2ac0",
+      "nombreProducto": "CAFEFeeeee",
+      "precioProducto": "2",
+      "imagen": "https://www.cesurformacion.com/uploads/media/21-9-large/02/2302-que-es-la-imagen-personal.png",
+      "categoria": "Infusiones",
+      "descripcionBreve": "adasd asd asdasdas",
+      "descripcionAmplia": "asdasda sd asd as ds sd asdas das dasd asd asdasd"
+    },
+    {
+      "id": "253a",
+      "nombreProducto": "CAFEFeeeee",
+      "precioProducto": "2",
+      "imagen": "https://www.cesurformacion.com/uploads/media/21-9-large/02/2302-que-es-la-imagen-personal.png",
+      "categoria": "Infusiones",
+      "descripcionBreve": "adasd asd asdasdas",
+      "descripcionAmplia": "asdasda sd asd as ds sd asdas das dasd asd asdasd"
     }
   ]
 }

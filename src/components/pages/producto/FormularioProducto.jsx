@@ -3,37 +3,48 @@ import { useForm } from "react-hook-form";
 import { crearProductoAPI } from "../../../helpers/queries";
 import Swal from "sweetalert2";
 
-const FormularioProducto = () => {
+const FormularioProducto = ({ editar }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-    reset
+    reset,
   } = useForm();
 
   const productoValidado = async (producto) => {
     console.log(producto);
-
-    const respuesta = await crearProductoAPI(producto)
-    if (respuesta.status === 201){
-      swal.fire({
-        title: "Producto creado",
-        text: `El producto "${producto.nombreProducto}" fue creado correctamente`,
-        icon: "success"
-      })
-      reset()
+    if (editar === true) {
+      // agregar la logica de editar
+      console.log("Aqui tengo que editar");
     } else {
-      swal.fire({
-        title: "Producto creado",
-        text: `El producto "${producto.nombreProducto}" no pudo ser creado. Intente esta operación en unos minutos`,
-        icon: "error"
-      })
+      const respuesta = await crearProductoAPI(producto);
+      if (respuesta.status === 201) {
+        Swal.fire({
+          title: "Producto creado",
+          text: `El producto "${producto.nombreProducto}" fue creado correctamente`,
+          icon: "success",
+        });
+        reset();
+      } else {
+        Swal.fire({
+          title: "Producto creado",
+          text: `El producto "${producto.nombreProducto}" no pudo ser creado. Intente esta operación en unos minutos`,
+          icon: "error",
+        });
+      }
     }
   };
 
   return (
     <section className="container mainSection">
-      <h1 className="display-4 mt-5">Nuevo producto</h1>
+      {editar === true ? (
+        <>
+          <h1 className="display-4 mt-5">Editar producto</h1>
+        </>
+      ) : (
+        <h1 className="display-4 mt-5">Nuevo producto</h1>
+      )}
+
       <hr />
       <Form className="my-4" onSubmit={handleSubmit(productoValidado)}>
         <Form.Group className="mb-3" controlId="formNombreProdcuto">
@@ -134,7 +145,9 @@ const FormularioProducto = () => {
               },
             })}
           />
-          <Form.Text className="text-danger">{errors.descripcionBreve?.message}</Form.Text>
+          <Form.Text className="text-danger">
+            {errors.descripcionBreve?.message}
+          </Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formImagen">
           <Form.Label>Descripción Amplia*</Form.Label>
@@ -146,17 +159,17 @@ const FormularioProducto = () => {
               required: "El nombre del producto es obligatorio",
               minLength: {
                 value: 5,
-                message:
-                  "Debe ingresar como minimo 5 caracteres",
+                message: "Debe ingresar como minimo 5 caracteres",
               },
               maxLength: {
                 value: 300,
-                message:
-                  "Debe ingresar como maximo 300 caracteres",
+                message: "Debe ingresar como maximo 300 caracteres",
               },
             })}
           />
-          <Form.Text className="text-danger">{errors.descripcionAmplia?.message}</Form.Text>
+          <Form.Text className="text-danger">
+            {errors.descripcionAmplia?.message}
+          </Form.Text>
         </Form.Group>
 
         <Button type="submit" variant="success">
