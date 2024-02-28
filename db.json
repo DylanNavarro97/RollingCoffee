@@ -1,22 +1,40 @@
 {
-    "productos":[
-        {
-            "id":"1",
-            "nombreProducto":"café",
-            "precio": 1500,
-            "categoria":"Infusiones",
-            "descripcionBreve": "café rico",
-            "descripcionAmplia": "café rico con mas detalles",
-            "imagen":"https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        },
-        {
-            "id":"2",
-            "nombreProducto":"té",
-            "precio": 1000,
-            "categoria":"Infusiones",
-            "descripcionBreve": "té rico",
-            "descripcionAmplia": "té rico con mas detalles",
-            "imagen":"url"
-        }
-    ]
+  "productos": [
+    {
+      "nombreProducto": "café",
+      "precioProducto": "800",
+      "imagen": "https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "categoria": "Infusiones",
+      "descripcionBreve": "café rico",
+      "descripcionAmplia": "café rico con mas detalles",
+      "id": "1"
+    },
+    {
+      "nombreProducto": "Té verde orgánico ",
+      "precioProducto": "2",
+      "imagen": "https://images.pexels.com/photos/3090274/pexels-photo-3090274.jpeg?auto=compress&cs=tinysrgb&w=300",
+      "categoria": "Infusiones",
+      "descripcionBreve": "asddas asd asda sd",
+      "descripcionAmplia": "Mas información sobre el té",
+      "id": "37b7"
+    },
+    {
+      "id": "2ac0",
+      "nombreProducto": "CAFEFeeeee",
+      "precioProducto": "2",
+      "imagen": "https://www.cesurformacion.com/uploads/media/21-9-large/02/2302-que-es-la-imagen-personal.png",
+      "categoria": "Infusiones",
+      "descripcionBreve": "adasd asd asdasdas",
+      "descripcionAmplia": "asdasda sd asd as ds sd asdas das dasd asd asdasd"
+    },
+    {
+      "id": "253a",
+      "nombreProducto": "CAFEFeeeee",
+      "precioProducto": "2",
+      "imagen": "https://www.cesurformacion.com/uploads/media/21-9-large/02/2302-que-es-la-imagen-personal.png",
+      "categoria": "Infusiones",
+      "descripcionBreve": "adasd asd asdasdas",
+      "descripcionAmplia": "asdasda sd asd as ds sd asdas das dasd asd asdasd"
+    }
+  ]
 }
