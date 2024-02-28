@@ -1,5 +1,5 @@
 import { Form, Button } from "react-bootstrap";
-import { set, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { crearProductoAPI, editarProductoAPI, obtenerProductoAPI } from "../../../helpers/queries";
 import Swal from "sweetalert2";
 import { useNavigate, useParams } from "react-router-dom";
