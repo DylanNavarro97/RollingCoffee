@@ -17,7 +17,7 @@ const Inicio = () => {
 
   useEffect(() => {
     traerProductos();
-  });
+  }, []);
   return (
     <section className="mainSection">
       <img
@@ -31,7 +31,7 @@ const Inicio = () => {
 
         <Row>
           {productos?.map((producto) => (
-            <CardProducto producto={producto} key={producto.id}/>
+            <CardProducto producto={producto} key={producto._id}/>
           ))}
         </Row>
       </Container>

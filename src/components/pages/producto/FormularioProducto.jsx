@@ -23,11 +23,11 @@ const FormularioProducto = ({ editar }) => {
       if (respuesta.status === 200){
         const productoEncontrado = await respuesta.json();
         setValue('nombreProducto', productoEncontrado.nombreProducto)
-        setValue('precioProducto', productoEncontrado.precioProducto)
+        setValue('precio', productoEncontrado.precio)
         setValue('categoria', productoEncontrado.categoria)
         setValue('imagen', productoEncontrado.imagen)
-        setValue('descripcionBreve', productoEncontrado.descripcionBreve)
-        setValue('descripcionAmplia', productoEncontrado.descripcionAmplia)
+        setValue('descripcion_breve', productoEncontrado.descripcion_breve)
+        setValue('descripcion_amplia', productoEncontrado.descripcion_amplia)
       }
     } catch(error){
       console.log(error)
@@ -42,10 +42,8 @@ const FormularioProducto = ({ editar }) => {
   },[])
 
   const productoValidado = async (producto) => {
-    console.log(producto);
     if (editar === true) {
       // agregar la logica de editar
-      console.log("Aqui tengo que editar");
       // tomar los datos del producto validado y enviarlo a la api para actualizar
       const respuesta = await editarProductoAPI(producto, id)
       if (respuesta.status === 200){
@@ -106,9 +104,9 @@ const FormularioProducto = ({ editar }) => {
                   "El nombre del producto debe tener como minimo 2 caracteres",
               },
               maxLength: {
-                value: 20,
+                value: 50,
                 message:
-                  "El nombre del producto debe tener como maximo 20 caracteres",
+                  "El nombre del producto debe tener como maximo 50 caracteres",
               },
             })}
           />
@@ -121,20 +119,20 @@ const FormularioProducto = ({ editar }) => {
           <Form.Control
             type="number"
             placeholder="Ej: 50"
-            {...register("precioProducto", {
+            {...register("precio", {
               required: "El precio del producto es obligatorio",
               min: {
-                value: 1,
-                message: "El precio del producto debe ser como minimo $1",
+                value: 50,
+                message: "El precio del producto debe ser como minimo $50",
               },
               maxLength: {
-                value: 20,
-                message: "El precio del producto debe ser como maximo $20",
+                value: 10000,
+                message: "El precio del producto debe ser como maximo $10000",
               },
             })}
           />
           <Form.Text className="text-danger">
-            {errors.precioProducto?.message}
+            {errors.precio?.message}
           </Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formImagen">
@@ -177,7 +175,7 @@ const FormularioProducto = ({ editar }) => {
             type="text"
             placeholder="Ej: Una taza de café suave y aromático."
             as="textarea"
-            {...register("descripcionBreve", {
+            {...register("descripcion_breve", {
               required: "El nombre del producto es obligatorio",
               minLength: {
                 value: 5,
@@ -201,11 +199,11 @@ const FormularioProducto = ({ editar }) => {
             type="text"
             placeholder="Ej: El café americano es una bebida caliente que consiste en un espresso diluido con agua caliente, lo que resulta en una taza de café suave y aromático. Es una opción popular para aquellos que prefieren un café menos intenso que el espresso tradicional. Perfecto para disfrutar en cualquier momento del día."
             as="textarea"
-            {...register("descripcionAmplia", {
+            {...register("descripcion_amplia", {
               required: "El nombre del producto es obligatorio",
               minLength: {
-                value: 5,
-                message: "Debe ingresar como minimo 5 caracteres",
+                value: 50,
+                message: "Debe ingresar como minimo 50 caracteres",
               },
               maxLength: {
                 value: 300,

@@ -31,7 +31,7 @@ const consultarAPI = async()=>{
       <Table responsive striped bordered hover>
         <thead>
           <tr className="text-center">
-            <th>Cod</th>
+            {/* <th>Cod</th> */}
             <th>Producto</th>
             <th>Precio</th>
             <th>URL de Imagen</th>
@@ -41,7 +41,7 @@ const consultarAPI = async()=>{
         </thead>
         <tbody>
           {
-            productos?.map((producto)=>  <ItemProducto key={producto.id} producto={producto} setProductos={setProductos} ></ItemProducto>)
+            productos?.map((producto)=>  <ItemProducto key={producto._id} producto={producto} setProductos={setProductos} ></ItemProducto>)
           }
         </tbody>
       </Table>

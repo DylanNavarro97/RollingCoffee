@@ -1,4 +1,5 @@
 const URL_Productos = import.meta.env.VITE_API_PRODUCTO;
+const URL_Producto = import.meta.env.VITE_API_PRODUCTO_INDIVIDUAL
 
 // GET
 export const leerProductosAPI = async () => {
@@ -14,7 +15,7 @@ export const leerProductosAPI = async () => {
 // GET devuelve un producto
 export const obtenerProductoAPI = async (id) => {
   try {
-    const respuesta = await fetch(`${URL_Productos}/${id}`);
+    const respuesta = await fetch(`${URL_Producto}/${id}`);
     return respuesta;
   } catch (error) {
     console.log(error);
@@ -41,7 +42,7 @@ export const crearProductoAPI = async (productoNuevo) => {
 // PUT
 export const editarProductoAPI = async (productoModificado, id) => {
   try {
-    const respuesta = await fetch(`${URL_Productos}/${id}`, {
+    const respuesta = await fetch(`${URL_Producto}/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -57,7 +58,7 @@ export const editarProductoAPI = async (productoModificado, id) => {
 // DELETE
 export const borrarProductoAPI = async (id) => {
   try {
-    const respuesta = await fetch(`${URL_Productos}/${id}`, {
+    const respuesta = await fetch(`${URL_Producto}/${id}`, {
       method: "DELETE",
     });
     console.log(respuesta);
